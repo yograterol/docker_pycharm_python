@@ -1,19 +1,19 @@
-docker-pycharm-python [![Docker Build Status](http://hubstatus.container42.com/tehsphinx/docker-pycharm-python)](https://registry.hub.docker.com/u/tehsphinx/docker-pycharm-python/)
+docker-pycharm-python
 ====
 
-Easy to use and [fig](http://www.fig.sh/index.html) compatible Python development box to be used with [PyCharm (JetBrains)](https://www.jetbrains.com/pycharm/). 
+Easy to use and [Docker Compose](https://docs.docker.com/compose/) compatible Python development box to be used with [PyCharm (JetBrains)](https://www.jetbrains.com/pycharm/). 
 This box is NOT meant to be used in production. It comes with SSH/SFTP for PyCharm access.
 
 For me this was a test to see if docker could be used as a "vagrant replacement" especially when it comes down to 
 running unit tests and debugging from PyCharm IDE. So far it looks promising...
 
 Note: SSH/SFTP User and Password implementation is based on [atmoz/sftp](https://registry.hub.docker.com/u/atmoz/sftp), 
-but changed to use ENV variables for fig support.
+but changed to use ENV variables for Docker Compose support.
 
 Usage
 -----
 
-Best used with [fig](http://www.fig.sh/index.html).
+Best used with [Docker Compose](https://docs.docker.com/compose/).
 
 Example
 --------
@@ -22,7 +22,7 @@ Dockerfile
 
 ```
 # Pull base image.
-FROM tehsphinx/docker-pycharm-python
+FROM yograterol/docker-pycharm-python
 
 # copy application to image
 ADD . /data/
@@ -33,7 +33,7 @@ WORKDIR /data
 RUN pip install -r requirements.txt
 ```
 
-Configuration for fig (fig.yml) 
+Configuration for Docker Compose (docker-compose.yml) 
 
 ```
 web:
