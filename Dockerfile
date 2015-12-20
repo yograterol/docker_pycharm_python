@@ -1,4 +1,4 @@
-FROM dockerfile/python
+FROM python
 
 ENV SFTP_USER docker
 ENV SFTP_PASS changeme
